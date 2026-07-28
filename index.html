@@ -403,7 +403,7 @@
   </div>
   <div id="panel-bizaffairs" class="category-panel">
     <div class="category-label">Business Affairs</div>
-    <div class="cat-contact">Questions? Contact: <strong>Karlee Rodrigues or Libby Tofig</strong></div>
+    <div class="cat-contact">Questions? Contact: <strong>Karlee Rodrigues</strong></div>
     <div class="cards-grid" id="grid-bizaffairs"></div>
   </div>
   <div id="panel-finance" class="category-panel">
@@ -418,7 +418,7 @@
   </div>
   <div id="panel-client" class="category-panel">
     <div class="category-label">Client &amp; Projects</div>
-    <div class="cat-contact">Questions? Contact: <strong>Jennifer Smith</strong></div>
+    <div class="cat-contact">Questions? Contact: <strong>Your Manager</strong></div>
     <div class="cards-grid" id="grid-client"></div>
   </div>
 </div>
@@ -427,118 +427,358 @@
 
 <script>
 var cards = [
-  { cat:'legal', action:'keep', icon:'&#9989;', title:'Acquisitions, Licensing & Distribution Agreements',
-    ex:'Active film acquisition agreements, licensing deals, and distribution rights agreements currently in effect',
-    steps:['If digitally or electronically executed, no need to print. Ensure electronic copy is sent to Business Affairs or stored in Google Drive under \'Historical Digitized Agreements\'.','Physical copies: keep in file cabinet until the move — no need to box separately.','Confirm with Business Affairs that all active agreements are properly filed electronically.'],
-    note:'Both physical (in filing cabinet) and electronic copies should exist. Electronic storage: Business Affairs team or Google Drive > Historical Digitized Agreements.' },
-  { cat:'legal', action:'scan', icon:'&#128424;', title:'Expired Acquisitions, Licensing & Distribution Agreements',
-    ex:'Film acquisition agreements, licensing deals, or distribution rights where the term has fully ended',
-    steps:['Confirm the agreement has expired with no open obligations — check with Business Affairs if unsure.','Electronic copy: send to Business Affairs or store in Google Drive under \'Historical Digitized Agreements\'.','Physical copies: keep in file cabinet until the move. Business Affairs will confirm final disposition of paper originals.'],
-    note:'Same electronic storage applies as active agreements — Business Affairs team or Google Drive > Historical Digitized Agreements.' },
-  { cat:'legal', action:'shred', icon:'&#128465;', title:'Due Diligence Files',
-    ex:'DD reports, financial models, data room exports, Business Affairs review memos',
-    steps:['Most DD has been paperless for many years — confirm digital copies exist in the data room or shared drive before doing anything with paper.','These contain non-public company financial information: use the locked confidential shred bin only.','Do not recycle — treat all DD materials as confidential regardless of age.'],
-    note:'If you find any paper-only DD item with no digital copy at all, scan it before shredding.' },
-  { cat:'bizaffairs', action:'keep', icon:'&#9989;', title:'Corporate & Governance Records',
-    ex:'Articles of incorporation, board minutes and resolutions, bylaws, shareholder agreements',
-    steps:['Physical originals may require permanent retention — do not box, scan, or shred without Business Affairs review.','If an electronic version already exists and is properly filed, keep the physical copy in a labeled folder for the move.','Contact Business Affairs to confirm which documents require original retention vs. digital-only.'],
-    note:'When in doubt, move it — do not discard any corporate record without explicit Business Affairs sign-off.' },
-    { cat:'bizaffairs', action:'keep', icon:'&#9989;', title:'Merger & Acquisition Integration Records',
-    ex:'Records from corporate acquisitions: integration plans, entity consolidation docs, post-close compliance records',
-    steps:['These relate to buying companies (not content) — keep physical originals with corporate governance records.','Active integration still underway: keep accessible at your workstation for the move.','Completed integrations: confirm with Business Affairs whether originals can be scanned and shredded or must be retained physically.'],
-    note:'Distinct from content/film acquisitions. If unsure whether a doc falls here, contact Business Affairs.' },
-  { cat:'bizaffairs', action:'keep', icon:'&#9989;', title:'Trademark Registrations',
-    ex:'USPTO trademark registration certificates, trademark renewal records, clearance opinions',
-    steps:['Active marks: keep all physical certificates — move with you, filed by mark name and registration number. Coordinate with Business Affairs on where to keep.','Send electronic certificates to the Business Affairs team for electronic storage.','Expired or lapsed marks: recycle the certificate and add an entry to the trademark log (mark name, reg. number, lapse date).'],
-    note:'Both physical and electronic copies should be filed with Business Affairs. Never discard a certificate for a still-active mark without Business Affairs sign-off.' },
-  { cat:'legal', action:'shred', icon:'&#128465;', title:'Dead Deals & Expired LOIs',
-    ex:'Term sheets, LOIs, or NDA drafts from deals that did not close',
-    steps:['Confirm the deal is fully dead with no open obligations.','Check with Business Affairs — some NDAs remain in effect even on dead deals, regardless of whether the deal closed.','Legal has confirmed no open obligations or active NDAs? Place in the locked confidential shred bin.'],
-    note:'Never discard NDA originals without Business Affairs sign-off.' },
-
-  { cat:'marketing', action:'shred', icon:'&#128465;', title:'Outdated Printed Collateral',
-    ex:'Old brochures, product sheets, flyers, mailers with outdated info',
-    steps:['3 years or older? Recycle without review — do not spend time checking these individually.','Less than 3 years old: verify a digital version exists, then recycle.','Not confidential — large recycling cans in the office. No shredding needed.'],
-    note:'Still-current materials belong in Festival & Press Event or Active Sales Materials. Unsure? Ask Nick Kemp.' },
-  { cat:'marketing', action:'shred', icon:'&#128465;', title:'Old Press Releases & Media Kits',
-    ex:'Printed press releases, old media kits, past event programs',
-    steps:['Press releases are public documents — large recycling cans in the office, no shredding needed.','3 years or older with a digital copy? Recycle without review.','Notable milestone or award coverage: check if already archived digitally before recycling.'],
-    note:'No shredding needed for press releases — this content is already public. Unsure? Ask Nick Kemp.' },
-  { cat:'marketing', action:'keep', icon:'&#9989;', title:'Active Sales Materials',
-    ex:'Current brochures, product sheets, and collateral still in circulation',
-    steps:['Keep a working supply at your workstation or in the shared sales area.','Label storage: "ACTIVE SALES MATERIALS — [Year]"','It moves with you — confirm quantity with your manager before the move.'],
-    note:'Cull quantity now — only bring what you will realistically use. Unsure if something is current? Ask Nick Kemp.' },
-  { cat:'marketing', action:'keep', icon:'&#9989;', title:'Festival & Press Event Materials',
-    ex:'Banners, displays, branded materials, and merchandise used at festivals and press events',
-    steps:['Must have current Kino Lorber logo and up-to-date information — nothing with outdated branding or logos.','Items that pass the above check: move with you. Flag oversized items to [FACILITIES/MANAGER] for move logistics.','Outdated branding or old information? Recycle or arrange disposal — do not bring to the new office.'],
-    note:'When in doubt about whether branding is current, ask Nick Kemp before deciding to keep or recycle.' },
-
-  { cat:'marketing', action:'keep', icon:'&#9989;', title:'Company History Materials',
-    ex:'Press coverage of Kino Lorber as a company, anniversary materials, awards for the company (not specific films), historical catalogs, founder or executive materials related to company milestones',
-    steps:['These relate to the history of Kino Lorber as a whole — keep and move with you regardless of age.','Store in a clearly labeled folder or binder: "COMPANY HISTORY — [Type] — [Year]"','Not sure if something qualifies? If it relates to a specific film, it is not company history. If it is about the company itself, keep it.'],
-    note:'Unsure? Ask Nick Kemp.' },
-  { cat:'finance', action:'dead', icon:'&#128230;', title:'Tax Records & Filings',
-    ex:'Corporate tax returns, W-2s, 1099s, payroll tax filings',
-    steps:['Box by tax year: "TAX RECORDS — [YEAR]"','Retain 7 years — contact Christine Gerard.','Dead storage location TBD — hold until notified.'],
-    note:'Do not mix tax years in the same box.' },
-  { cat:'finance', action:'scan', icon:'&#128424;', title:'Expired Vendor & Service Contracts',
-    ex:'Expired signed vendor agreements, NDAs, service contracts (not licensing or acquisition agreements)',
-    steps:['Confirm the contract has fully expired with no renewal or tail obligations.','Scan to PDF and save to Finance Shared Drive under the vendor/category folder.','Shred paper originals using the locked confidential shred bin — contracts contain non-public business terms.'],
-    note:'Active contracts stay with you — do not scan and shred until fully expired.' },
-  { cat:'finance', action:'keep', icon:'&#9989;', title:'Active Contracts & Agreements',
-    ex:'Contracts currently in effect, open vendor POs, active leases (non-acquisition/licensing/distribution)',
-    steps:['Store in a labeled binder: "ACTIVE CONTRACTS — [Year]"','Keep at your workstation — it moves with you.','Do not box for storage until the contract expires.'],
-    note:'Unsure if a contract is active? Check with [FINANCE CONTACT].' },
-  { cat:'finance', action:'scan', icon:'&#128424;', title:'Invoices & AP/AR Records',
-    ex:'Paid invoices, receipts, expense reports, check copies',
-    steps:['Scan to PDF and save to Finance Shared Drive.','Confirm scan is legible before shredding.','Shred originals after confirming digital backup.'],
-    note:'Invoices tied to open disputes or audits: hold originals, do not shred.' },
-  { cat:'bizaffairs', action:'scan', icon:'&#128424;', title:'Banking & Financing Documents',
-    ex:'Promissory notes, loan agreements, credit facility documents, any paper with a lender\'s or bank\'s wet signature',
-    steps:['Determine if the agreement is active or expired — check with Christine Gerard if unsure. Expired means the obligation ended more than 7 years ago.','Active or within 7 years of expiry: scan to PDF, retain digital copy in Finance Shared Drive, and keep the physical original until Christine confirms it can be released.','More than 7 years expired: scan to PDF and retain digitally per Christine\'s guidance. Do not shred without her sign-off.'],
-    note:'Questions about banking and financing documents → Christine Gerard' },
-  { cat:'finance', action:'shred', icon:'&#128465;', title:'Expired Financial Records',
-    ex:'Bank statements, invoices, receipts older than 7 years',
-    steps:['Confirm no open audits, disputes, or litigation holds.','Get sign-off from Finance Director before shredding.','Place in locked confidential shred bin.'],
-    note:'Never shred records under a litigation hold — contact Business Affairs if unsure.' },
-
-  { cat:'bizaffairs', action:'keep', icon:'&#9989;', title:'Insurance Policies & Claims Files',
-    ex:'Active policy documents, certificates of insurance, open or recent claims files, policy correspondence',
-    steps:['Active policies move with you — keep in a labeled folder and make sure Erol Menda knows the physical location.','Expired policies and closed claims: hold until Erol confirms the applicable retention period before doing anything.','Do not shred any insurance document without Erol Menda\'s explicit sign-off.'],
-    note:'Questions about active policies or retention periods → Erol Menda' },
-  { cat:'admin', action:'shred', icon:'&#128190;', title:'Physical Media Disposal',
-    ex:'DVDs, Blu-rays, screeners, VHS tapes, or any other physical media that needs to be disposed of or brought to the new space',
-    steps:['Before doing anything with physical media, contact Jennifer Smith with two numbers: (1) how many banker\'s boxes or small moving boxes worth of media need to be destroyed, and (2) how many boxes need to come to the new office.','Use a standard banker\'s box or small moving box as your unit of measure — like the ones currently near Daily\'s desk.','Media for destruction will go through a separate DVD/media destruction service. Do not put physical media in the regular shred bins.'],
-    note:'Do not dispose of any physical media without contacting Jennifer Smith first. A separate destruction service will be coordinated.' },
-  { cat:'admin', action:'shred', icon:'&#128465;', title:'Old Meeting Notes & Memos',
-    ex:'Printed meeting notes, internal memos, agendas from prior years',
-    steps:['Not tied to an active project? It can go.','Non-sensitive docs: large recycling cans in the office.','Sensitive info? Use the locked confidential shred bin.'],
-    note:'When in doubt, ask your manager before discarding.' },
-  { cat:'admin', action:'shred', icon:'&#128465;', title:'Outdated Binders & Manuals',
-    ex:'Old procedure binders, superseded policy manuals, vendor catalogs',
-    steps:['Digital version exists? Recycle the paper.','No digital version but still useful? Scan it, then recycle.','No longer useful? Recycle — do not create digital clutter.'],
-    note:'Ask: would anyone realistically search for this? If no, recycle it.' },
-  { cat:'admin', action:'scan', icon:'&#128424;', title:'SOPs & Procedures Worth Keeping',
-    ex:'Department SOPs, annotated training materials, process documentation',
-    steps:['Scan to PDF and save to [Shared Drive].','Share digitally with your team.','Recycle the paper original after confirming the scan.'],
-    note:'Good time to update anything outdated before you scan it.' },
-
-  { cat:'client', action:'scan', icon:'&#128424;', title:'Closed Project Files',
-    ex:'Completed project binders, final deliverables, closed client correspondence',
-    steps:['Confirm project is fully closed.','Confidential content (client terms, financials, non-public info): scan to [Shared Drive], then locked confidential shred bin.','Non-confidential paper (public correspondence, general notes): scan if worth keeping, then large recycling cans.'],
-    note:'Signed originals or contracts within closed projects go to dead storage — do not shred those.' },
-  { cat:'client', action:'keep', icon:'&#9989;', title:'Active Licensors',
-    ex:'Active licensor relationships, open correspondence, current agreements and deal memos',
-    steps:['Keep in a labeled binder at your workstation — it moves with you.','If not already digitized, scan a copy to [Shared Drive] now as a backup before the move.','Do not box for storage while the licensor relationship is active.'],
-    note:'Active licensor files should have both a physical and digital copy. If only one exists, create the other before moving.' },
-  { cat:'client', action:'scan', icon:'&#128424;', title:'Client Correspondence & Approvals',
-    ex:'Signed approvals, printed client emails, meeting notes with client sign-off',
-    steps:['Scan to PDF and save to [Shared Drive] under client folder.','Verify signatures are clearly visible in the scan.','Shred paper originals after confirming the backup.'],
-    note:'Signed contracts go to dead storage — do not shred originals.' },
-  { cat:'client', action:'shred', icon:'&#128465;', title:'Old Drafts & Documents',
-    ex:'Earlier draft versions, superseded documents, working files from closed or inactive projects',
-    steps:['Confirm project is closed with no active disputes.','Contains client or company non-public information? Locked confidential shred bin only.','Truly non-confidential internal working notes (no client names, no financials): recycling cans.'],
-    note:'When in doubt about whether content is confidential, always use the locked shred bin.' }
+  {
+    "cat": "legal",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Acquisitions, Licensing & Distribution Agreements",
+    "ex": "Active film acquisition agreements, licensing deals, distribution rights agreements, and related letters and correspondence currently in effect",
+    "steps": [
+      "If digitally or electronically executed, no need to print. Ensure electronic copy is sent to Business Affairs or stored in the <a href=\"https://drive.google.com/drive/folders/15ippiXDEnxOs7UCoJgzUbZRT1jT_0vXh?usp=drive_link\" target=\"_blank\" onclick=\"event.stopPropagation()\" style=\"color:inherit;text-decoration:underline;\">Digitized Historic Contracts</a> folder on Google Drive.",
+      "Physical copies: keep in file cabinet until the move — no need to box separately.",
+      "Confirm with Business Affairs that all active agreements and correspondence are properly filed electronically."
+    ],
+    "note": "Both physical (in filing cabinet) and electronic copies should exist. Electronic storage: Business Affairs team or Google Drive > <a href=\"https://drive.google.com/drive/folders/15ippiXDEnxOs7UCoJgzUbZRT1jT_0vXh?usp=drive_link\" target=\"_blank\" onclick=\"event.stopPropagation()\" style=\"color:inherit;text-decoration:underline;\">Digitized Historic Contracts</a>."
+  },
+  {
+    "cat": "legal",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Expired Acquisitions, Licensing & Distribution Agreements",
+    "ex": "Film acquisition agreements, licensing deals, distribution rights agreements, and related correspondence where the term has fully ended",
+    "steps": [
+      "Confirm the agreement has expired with no open obligations — check with Business Affairs if unsure.",
+      "Electronic copy: send to Business Affairs or store in the <a href=\"https://drive.google.com/drive/folders/15ippiXDEnxOs7UCoJgzUbZRT1jT_0vXh?usp=drive_link\" target=\"_blank\" onclick=\"event.stopPropagation()\" style=\"color:inherit;text-decoration:underline;\">Digitized Historic Contracts</a> folder on Google Drive.",
+      "Physical copies: keep in file cabinet until the move. Business Affairs will confirm final disposition of paper originals and correspondence."
+    ],
+    "note": "Same electronic storage applies as active agreements — Business Affairs team or Google Drive > <a href=\"https://drive.google.com/drive/folders/15ippiXDEnxOs7UCoJgzUbZRT1jT_0vXh?usp=drive_link\" target=\"_blank\" onclick=\"event.stopPropagation()\" style=\"color:inherit;text-decoration:underline;\">Digitized Historic Contracts</a>."
+  },
+  {
+    "cat": "bizaffairs",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Due Diligence Files",
+    "ex": "DD reports, financial models, data room exports, Business Affairs review memos",
+    "steps": [
+      "Most DD has been paperless for many years — confirm digital copies exist in the data room or shared drive before doing anything with paper.",
+      "These contain non-public company financial information: use the locked confidential shred bin only.",
+      "Do not recycle — treat all DD materials as confidential regardless of age."
+    ],
+    "note": "If you find any paper-only DD item with no digital copy at all, scan it before shredding."
+  },
+  {
+    "cat": "bizaffairs",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Corporate & Governance Records",
+    "ex": "Articles of incorporation, board minutes and resolutions, bylaws, shareholder agreements",
+    "steps": [
+      "Physical originals may require permanent retention — do not box, scan, or shred without Business Affairs review.",
+      "If an electronic version already exists and is properly filed, keep the physical copy in a labeled folder for the move.",
+      "Contact Business Affairs to confirm which documents require original retention vs. digital-only."
+    ],
+    "note": "When in doubt, move it — do not discard any corporate record without explicit Business Affairs sign-off. Questions about corporate and governance records? Contact Karlee Rodrigues."
+  },
+  {
+    "cat": "bizaffairs",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Merger & Acquisition Integration Records",
+    "ex": "Records from corporate acquisitions: integration plans, entity consolidation docs, post-close compliance records",
+    "steps": [
+      "These relate to buying companies (not content) — keep physical originals with corporate governance records.",
+      "Active integration still underway: keep accessible at your workstation for the move.",
+      "Completed integrations: confirm with Business Affairs whether originals can be scanned and shredded or must be retained physically."
+    ],
+    "note": "Distinct from content/film acquisitions. If unsure whether a doc falls here, contact Business Affairs."
+  },
+  {
+    "cat": "bizaffairs",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Trademark Registrations",
+    "ex": "USPTO trademark registration certificates, trademark renewal records, clearance opinions",
+    "steps": [
+      "Active marks: keep all physical certificates — move with you, filed by mark name and registration number. Coordinate with Business Affairs on where to keep.",
+      "Send electronic certificates to the Business Affairs team for electronic storage.",
+      "Expired or lapsed marks: recycle the certificate and add an entry to the trademark log (mark name, reg. number, lapse date)."
+    ],
+    "note": "Both physical and electronic copies should be filed with Business Affairs. Never discard a certificate for a still-active mark without Business Affairs sign-off. Questions about trademark registrations? Contact Jennifer Smith."
+  },
+  {
+    "cat": "legal",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Dead Deals & Expired LOIs",
+    "ex": "Term sheets, LOIs, or NDA drafts from deals that did not close",
+    "steps": [
+      "Confirm the deal is fully dead with no open obligations.",
+      "Check with Business Affairs — some NDAs remain in effect even on dead deals, regardless of whether the deal closed.",
+      "Legal has confirmed no open obligations or active NDAs? Place in the locked confidential shred bin."
+    ],
+    "note": "Never discard NDA originals without Business Affairs sign-off."
+  },
+  {
+    "cat": "marketing",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Outdated Printed Collateral",
+    "ex": "Old brochures, product sheets, flyers, mailers with outdated info",
+    "steps": [
+      "3 years or older? Recycle without review — do not spend time checking these individually.",
+      "Less than 3 years old: verify a digital version exists, then recycle.",
+      "Not confidential — large recycling cans in the office. No shredding needed."
+    ],
+    "note": "Still-current materials belong in Festival & Press Event or Active Sales Materials. Unsure? Ask Nick Kemp."
+  },
+  {
+    "cat": "marketing",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Old Press Releases & Media Kits",
+    "ex": "Printed press releases, old media kits, past event programs",
+    "steps": [
+      "Press releases are public documents — large recycling cans in the office, no shredding needed.",
+      "3 years or older with a digital copy? Recycle without review.",
+      "Notable milestone or award coverage: check if already archived digitally before recycling."
+    ],
+    "note": "No shredding needed for press releases — this content is already public. Unsure? Ask Nick Kemp."
+  },
+  {
+    "cat": "marketing",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Active Sales Materials",
+    "ex": "Current brochures, product sheets, and collateral still in circulation",
+    "steps": [
+      "Keep a working supply at your workstation or in the shared sales area.",
+      "Label storage: \"ACTIVE SALES MATERIALS — [Year]\"",
+      "It moves with you — confirm quantity with your manager before the move."
+    ],
+    "note": "Cull quantity now — only bring what you will realistically use. Unsure if something is current? Ask Nick Kemp."
+  },
+  {
+    "cat": "marketing",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Festival & Press Event Materials",
+    "ex": "Banners, displays, branded materials, and merchandise used at festivals and press events",
+    "steps": [
+      "Must have current Kino Lorber logo and up-to-date information — nothing with outdated branding or logos.",
+      "Items that pass the above check: move with you. Flag oversized items to Nick Kemp for move logistics.",
+      "Outdated branding or old information? Recycle or arrange disposal — do not bring to the new office."
+    ],
+    "note": "When in doubt about whether branding is current, ask Nick Kemp before deciding to keep or recycle."
+  },
+  {
+    "cat": "marketing",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Company History Materials",
+    "ex": "Press coverage of Kino Lorber as a company, anniversary materials, awards for the company (not specific films), historical catalogs, newspaper clippings, letters from licensors, printed still images, film strips, founder or executive materials related to company milestones",
+    "steps": [
+      "These relate to the history of Kino Lorber as a whole — keep and move with you regardless of age.",
+      "Store in a clearly labeled folder or binder: \"COMPANY HISTORY — [Type] — [Year]\"",
+      "Not sure if something qualifies? If it relates to a specific film, it is not company history. If it is about the company itself, keep it."
+    ],
+    "note": "Unsure? Ask Nick Kemp."
+  },
+  {
+    "cat": "finance",
+    "action": "dead",
+    "icon": "&#128230;",
+    "title": "Tax Records & Filings",
+    "ex": "Corporate tax returns, W-2s, 1099s, payroll tax filings",
+    "steps": [
+      "Box by tax year: \"TAX RECORDS — [YEAR]\"",
+      "Retain for 7 years from the date of filing.",
+      "Dead storage location TBD — hold until notified."
+    ],
+    "note": "Do not mix tax years in the same box."
+  },
+  {
+    "cat": "finance",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Expired Vendor & Service Contracts",
+    "ex": "Expired signed vendor agreements, NDAs, service contracts (not licensing or acquisition agreements)",
+    "steps": [
+      "Confirm the contract has fully expired with no renewal or tail obligations.",
+      "Scan to PDF and save to the appropriate shared drive as directed by Christine Gerard.",
+      "Shred paper originals using the locked confidential shred bin — contracts contain non-public business terms."
+    ],
+    "note": "Active contracts stay with you — do not scan and shred until fully expired."
+  },
+  {
+    "cat": "finance",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Active Vendor & Service Contracts",
+    "ex": "Vendor contracts and service agreements currently in effect, open vendor POs, active leases (non-acquisition/licensing/distribution)",
+    "steps": [
+      "Store in a labeled binder: \"ACTIVE CONTRACTS — [Year]\"",
+      "Keep at your workstation — it moves with you.",
+      "Do not box for storage until the contract expires."
+    ],
+    "note": "Unsure if a contract is active? Check with Christine Gerard."
+  },
+  {
+    "cat": "finance",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Invoices & AP/AR Records",
+    "ex": "Paid invoices, receipts, expense reports, check copies",
+    "steps": [
+      "If the document is under 7 years old, check with Christine and her team to see if the document is already scanned.",
+      "Scan to PDF and save to the appropriate shared drive as directed by Christine Gerard.",
+      "Confirm scan is legible before shredding.",
+      "Shred originals after confirming digital backup."
+    ],
+    "note": "Invoices tied to open disputes or audits: hold originals, do not shred."
+  },
+  {
+    "cat": "finance",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Banking & Financing Documents",
+    "ex": "Promissory notes, loan agreements, credit facility documents, any paper with a lender's or bank's wet signature",
+    "steps": [
+      "Determine if the agreement is active or expired — check with Christine Gerard if unsure. Expired means the obligation ended more than 7 years ago.",
+      "Active or within 7 years of expiry: scan to PDF, retain digital copy in Finance Shared Drive, and keep the physical original until Christine confirms it can be released.",
+      "More than 7 years expired: scan to PDF and retain digitally per Christine's guidance. Do not shred without her sign-off."
+    ],
+    "note": "Questions about banking and financing documents → Christine Gerard"
+  },
+  {
+    "cat": "finance",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Expired Financial Records",
+    "ex": "Bank statements, invoices, receipts older than 7 years",
+    "steps": [
+      "Confirm no open audits, disputes, or litigation holds.",
+      "Get sign-off from Christine Gerard before shredding.",
+      "Place in locked confidential shred bin."
+    ],
+    "note": "Never shred records under a litigation hold — contact Business Affairs if unsure."
+  },
+  {
+    "cat": "finance",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Insurance Policies & Claims Files",
+    "ex": "Active policy documents, certificates of insurance, open or recent claims files, policy correspondence",
+    "steps": [
+      "Active policies move with you — keep in a labeled folder and make sure Erol Menda knows the physical location.",
+      "Expired policies and closed claims: hold until Erol confirms the applicable retention period before doing anything.",
+      "Do not shred any insurance document without Erol Menda's explicit sign-off."
+    ],
+    "note": "Questions about active policies or retention periods → Erol Menda"
+  },
+  {
+    "cat": "admin",
+    "action": "shred",
+    "icon": "&#128190;",
+    "title": "Physical Media Disposal",
+    "ex": "DVDs, Blu-rays, screeners, VHS tapes, or any other physical media that needs to be disposed of or brought to the new space",
+    "steps": [
+      "Before doing anything with physical media, contact Jennifer Smith with two numbers: (1) how many banker's boxes or small moving boxes worth of media need to be destroyed, and (2) how many boxes need to come to the new office.",
+      "Use a standard banker's box or small moving box as your unit of measure — like the ones currently near Daily's desk.",
+      "Media for destruction will go through a separate DVD/media destruction service. Do not put physical media in the regular shred bins."
+    ],
+    "note": "Do not dispose of any physical media without contacting Jennifer Smith first. A separate destruction service will be coordinated."
+  },
+  {
+    "cat": "admin",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Old Meeting Notes & Memos",
+    "ex": "Printed meeting notes, internal memos, agendas from prior years",
+    "steps": [
+      "Not tied to an active project? It can go.",
+      "Non-sensitive docs: large recycling cans in the office.",
+      "Sensitive info? Use the locked confidential shred bin."
+    ],
+    "note": "When in doubt, ask your manager before discarding."
+  },
+  {
+    "cat": "admin",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Outdated Binders & Manuals",
+    "ex": "Old procedure binders, superseded policy manuals, vendor catalogs",
+    "steps": [
+      "Digital version exists? Recycle the paper.",
+      "No digital version but still useful? Scan it, then recycle.",
+      "No longer useful? Recycle — do not create digital clutter."
+    ],
+    "note": "Ask: would anyone realistically search for this? If no, recycle it."
+  },
+  {
+    "cat": "admin",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "SOPs & Procedures Worth Keeping",
+    "ex": "Department SOPs, annotated training materials, process documentation",
+    "steps": [
+      "Scan to PDF and save to appropriate shared drive (check with supervisor if unsure about the drive).",
+      "Share digitally with your team.",
+      "Recycle the paper original after confirming the scan."
+    ],
+    "note": "Good time to update anything outdated before you scan it."
+  },
+  {
+    "cat": "client",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Closed Project Files",
+    "ex": "Completed project binders, final deliverables, closed client correspondence",
+    "steps": [
+      "Confirm project is fully closed.",
+      "Confidential content (client terms, financials, non-public info): scan to appropriate shared drive, then locked confidential shred bin.",
+      "Non-confidential paper (public correspondence, general notes): scan if worth keeping, then large recycling cans."
+    ],
+    "note": "Signed originals or contracts within closed projects go to dead storage — do not shred those."
+  },
+  {
+    "cat": "client",
+    "action": "keep",
+    "icon": "&#9989;",
+    "title": "Active Licensors",
+    "ex": "Active licensor relationships, open correspondence, current agreements and deal memos",
+    "steps": [
+      "Keep in a labeled binder at your workstation — it moves with you.",
+      "If not already digitized, scan a copy to the appropriate shared drive now as a backup before the move.",
+      "Do not box for storage while the licensor relationship is active."
+    ],
+    "note": "Active licensor files should have both a physical and digital copy. If only one exists, create the other before moving."
+  },
+  {
+    "cat": "client",
+    "action": "scan",
+    "icon": "&#128424;",
+    "title": "Client Correspondence & Approvals",
+    "ex": "Signed approvals, printed client emails, meeting notes with client sign-off",
+    "steps": [
+      "Scan to PDF and save to the appropriate shared drive under client folder.",
+      "Verify signatures are clearly visible in the scan.",
+      "Shred paper originals after confirming the backup."
+    ],
+    "note": "Signed contracts go to dead storage — do not shred originals."
+  },
+  {
+    "cat": "client",
+    "action": "shred",
+    "icon": "&#128465;",
+    "title": "Old Drafts & Documents",
+    "ex": "Earlier draft versions, superseded documents, working files from closed or inactive projects",
+    "steps": [
+      "Confirm project is closed with no active disputes.",
+      "Contains client or company non-public information? Locked confidential shred bin only.",
+      "Truly non-confidential internal working notes (no client names, no financials): recycling cans."
+    ],
+    "note": "When in doubt about whether content is confidential, always use the locked shred bin."
+  }
 ];
 
 var meta = {
